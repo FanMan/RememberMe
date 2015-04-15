@@ -19,6 +19,7 @@
 		745E8EBB1ADDE050007FA7BF /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745E8EB91ADDE050007FA7BF /* Slt.framework */; };
 		745E8EBF1ADDE367007FA7BF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745E8EBE1ADDE367007FA7BF /* AudioToolbox.framework */; };
 		745E8EC11ADDE36D007FA7BF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745E8EC01ADDE36D007FA7BF /* AVFoundation.framework */; };
+		9F48B04E1ADED87400EE7498 /* Bot.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F48B04D1ADED87400EE7498 /* Bot.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		745E8EB91ADDE050007FA7BF /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Slt.framework; path = RememberMe/Framework/Slt.framework; sourceTree = SOURCE_ROOT; };
 		745E8EBE1ADDE367007FA7BF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		745E8EC01ADDE36D007FA7BF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9F48B04D1ADED87400EE7498 /* Bot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bot.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				745E8E961ADDDDFE007FA7BF /* Images.xcassets */,
 				745E8E981ADDDDFE007FA7BF /* LaunchScreen.xib */,
 				745E8E861ADDDDFD007FA7BF /* Supporting Files */,
+				9F48B04D1ADED87400EE7498 /* Bot.m */,
 			);
 			path = RememberMe;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			files = (
 				745E8E8C1ADDDDFD007FA7BF /* AppDelegate.m in Sources */,
 				745E8E8F1ADDDDFD007FA7BF /* MasterViewController.m in Sources */,
+				9F48B04E1ADED87400EE7498 /* Bot.m in Sources */,
 				745E8E891ADDDDFD007FA7BF /* main.m in Sources */,
 				745E8E921ADDDDFD007FA7BF /* DetailViewController.m in Sources */,
 			);
@@ -453,6 +457,7 @@
 				745E8EAB1ADDDDFE007FA7BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		745E8EAC1ADDDDFE007FA7BF /* Build configuration list for PBXNativeTarget "RememberMeTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +466,7 @@
 				745E8EAE1ADDDDFE007FA7BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
