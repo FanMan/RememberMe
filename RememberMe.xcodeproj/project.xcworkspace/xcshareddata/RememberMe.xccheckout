@@ -12,20 +12,24 @@
 	<dict>
 		<key>8558F4D1A24A767558D4BBC825694E6D4C901644</key>
 		<string>https://github.com/Mville-Coders/Remember-Me.git</string>
+		<key>DCEE8C788320097DB948C49F35FEF024FA3B648E</key>
+		<string>https://github.com/Mville-Coders/RememberMe.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>RememberMe.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8558F4D1A24A767558D4BBC825694E6D4C901644</key>
+		<string>../../../Remember-Me</string>
+		<key>DCEE8C788320097DB948C49F35FEF024FA3B648E</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Mville-Coders/Remember-Me.git</string>
+	<string>https://github.com/Mville-Coders/RememberMe.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>8558F4D1A24A767558D4BBC825694E6D4C901644</string>
+	<string>DCEE8C788320097DB948C49F35FEF024FA3B648E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>8558F4D1A24A767558D4BBC825694E6D4C901644</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Remember-Me</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DCEE8C788320097DB948C49F35FEF024FA3B648E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RememberMe</string>
 		</dict>
 	</array>
 </dict>
