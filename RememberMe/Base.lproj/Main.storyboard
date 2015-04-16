@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="-312" y="54"/>
         </scene>
-        <!--View Controller-->
+        <!--Talk To Me View Controller-->
         <scene sceneID="dMv-oj-wH3">
             <objects>
-                <viewController id="Ljx-DG-cUM" sceneMemberID="viewController">
+                <viewController id="Ljx-DG-cUM" customClass="TalkToMeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cUk-c0-vh4"/>
                         <viewControllerLayoutGuide type="bottom" id="JPE-Sc-sGO"/>
@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="185" y="-419"/>
         </scene>
-        <!--View Controller-->
+        <!--Talk To Me View Controller-->
         <scene sceneID="Nqo-CU-lws">
             <objects>
-                <viewController id="73q-Nx-IxG" sceneMemberID="viewController">
+                <viewController id="73q-Nx-IxG" customClass="TalkToMeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zoi-Zm-c28"/>
                         <viewControllerLayoutGuide type="bottom" id="Fhc-sW-RNZ"/>

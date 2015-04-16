@@ -7,8 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Slt/Slt.h>
+#import <OpenEars/OEFliteController.h>
+#import <OpenEars/OELanguageModelGenerator.h>
+#import <OpenEars/OEAcousticModel.h>
+#import <OpenEars/OEEventsObserver.h>
 
 @interface TalkToMeViewController : UIViewController
+
+@property (strong, nonatomic) OEFliteController *fliteController; //...
+@property (strong, nonatomic) Slt *slt; //...
+@property (strong, nonatomic) OEEventsObserver *openEarsEventsObserver;
+@property NSMutableArray *objects;
 
 @end
 
