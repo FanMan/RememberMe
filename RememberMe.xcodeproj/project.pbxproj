@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AA640151AE067410068ED52 /* TypeToMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA640141AE067410068ED52 /* TypeToMeViewController.m */; };
+		6AA640181AE0695B0068ED52 /* TALK TO ME.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AA640171AE0695B0068ED52 /* TALK TO ME.png */; };
 		745E8E891ADDDDFD007FA7BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 745E8E881ADDDDFD007FA7BF /* main.m */; };
 		745E8E8C1ADDDDFD007FA7BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 745E8E8B1ADDDDFD007FA7BF /* AppDelegate.m */; };
 		745E8E8F1ADDDDFD007FA7BF /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 745E8E8E1ADDDDFD007FA7BF /* MasterViewController.m */; };
@@ -33,6 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6AA640141AE067410068ED52 /* TypeToMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeToMeViewController.m; sourceTree = "<group>"; };
+		6AA640161AE067560068ED52 /* TypeToMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypeToMeViewController.h; sourceTree = "<group>"; };
+		6AA640171AE0695B0068ED52 /* TALK TO ME.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TALK TO ME.png"; path = "Images.xcassets/TALK TO ME.png"; sourceTree = "<group>"; };
 		745E8E831ADDDDFD007FA7BF /* RememberMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RememberMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		745E8E871ADDDDFD007FA7BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		745E8E881ADDDDFD007FA7BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,8 +117,11 @@
 				745E8E911ADDDDFD007FA7BF /* DetailViewController.m */,
 				745E8E931ADDDDFE007FA7BF /* Main.storyboard */,
 				745E8E961ADDDDFE007FA7BF /* Images.xcassets */,
+				6AA640171AE0695B0068ED52 /* TALK TO ME.png */,
 				745E8E981ADDDDFE007FA7BF /* LaunchScreen.xib */,
 				745E8E861ADDDDFD007FA7BF /* Supporting Files */,
+				6AA640141AE067410068ED52 /* TypeToMeViewController.m */,
+				6AA640161AE067560068ED52 /* TypeToMeViewController.h */,
 			);
 			path = RememberMe;
 			sourceTree = "<group>";
@@ -236,6 +244,7 @@
 			files = (
 				745E8E951ADDDDFE007FA7BF /* Main.storyboard in Resources */,
 				745E8E9A1ADDDDFE007FA7BF /* LaunchScreen.xib in Resources */,
+				6AA640181AE0695B0068ED52 /* TALK TO ME.png in Resources */,
 				745E8E971ADDDDFE007FA7BF /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +268,7 @@
 				745E8E891ADDDDFD007FA7BF /* main.m in Sources */,
 				745E8E921ADDDDFD007FA7BF /* DetailViewController.m in Sources */,
 				9F48B0511AE03BD600EE7498 /* TalkToMeViewController.m in Sources */,
+				6AA640151AE067410068ED52 /* TypeToMeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

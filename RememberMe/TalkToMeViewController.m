@@ -6,6 +6,11 @@
 //  Copyright (c) 2015 dotCOM. All rights reserved.
 //
 
+
+
+//ALL THINGS SPEECH-TO-TEXT ONLY WILL BE PUT HERE, ANYTHING THAT'S TEXT-TO-SPEECH SHOULD BE PUT IN A FILE SIMILAR TO THIS
+//NAMED "TypeToMeViewController.m"
+
 #import "TalkToMeViewController.h"
 
 @implementation TalkToMeViewController
@@ -17,7 +22,7 @@
     
     self.fliteController = [[OEFliteController alloc] init]; //...
     self.slt = [[Slt alloc] init]; //...
-    [self.fliteController say:@ "Hello, Talk to me." withVoice:self.slt];
+    [self.fliteController say:@ "Hello, talk to me." withVoice:self.slt];
     self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
     [self.openEarsEventsObserver setDelegate:self];
 }
