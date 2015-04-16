@@ -10,12 +10,12 @@
 
 NSString *message = @"Hello";
 
-NSString *url = [NSString stringWithFormat:@"https://aiaas.pandorabots.com/talk/1409611776855/remembertest?input=%@&user_key=b9332f7819d3df78debaafce36fafeee", message];
+NSString *url = [NSString stringWithFormat:@"https://aiaas.pandorabots.com/talk/1409611776855/rememtest?input=hello&user_key=b9332f7819d3df78debaafce36fafeee", message];
 // Override point for customization after application launch.
 // Create the request.
 
 NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-[postRequest setHTTPMethod:@"POST"];
+[[postRequest setHTTPMethod:@"POST"];
 // Create the NSMutableData to hold the received data.
 
 // receivedData is an instance variable declared elsewhere.
