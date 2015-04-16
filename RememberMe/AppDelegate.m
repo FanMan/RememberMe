@@ -17,39 +17,37 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    return YES;
     
     NSString *message = @"Hello";
     
-    NSString *url = [NSString stringWithFormat:@"https://aiaas.pandorabots.com/talk/1409611776855/rememtest?input=hello&user_key=b9332f7819d3df78debaafce36fafeee", message];
+    NSString *url = [NSString stringWithFormat:@"https://aiaas.pandorabots.com/talk/1409611776855/remembertest?input=%@&user_key=b9332f7819d3df78debaafce36fafeee", message];
     // Override point for customization after application launch.
     // Create the request.
-    
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-    [[postRequest setHTTPMethod:@"POST"]];
-     // Create the NSMutableData to hold the received data.
-     
-     // receivedData is an instance variable declared elsewhere.
-     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
-     
-     [ [NSURLConnection sendAsynchronousRequest:postRequest queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
-        {
-            if ([data length] > 0 && error == nil) {
-                NSLog(@"success");
-                NSString *reply = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-                NSLog(@"reply: %@", reply);
-                //[delegate receivedData:data];
-            } else if ([data length] == 0 && error == nil)
-                NSLog(@"empty");
-            //[delegate emptyReply];
-            else if (error != nil && error.code == NSURLErrorTimedOut)
-                NSLog(@"timeout");
-            //[delegate timedOut];
-            else if (error != nil)
-                NSLog(@"error");
-            //[delegate downloadError:error];
-        }]
+    [postRequest setHTTPMethod:@"POST"];
+    // Create the NSMutableData to hold the received data.
+    // receivedData is an instance variable declared elsewhere.
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    [NSURLConnection sendAsynchronousRequest:postRequest queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
+     {
+         if ([data length] > 0 && error == nil) {
+             NSLog(@"success");
+             NSString *reply = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+             NSLog(@"reply: %@", reply);
+             //[delegate receivedData:data];
+         } else if ([data length] == 0 && error == nil)
+             NSLog(@"empty");
+         //[delegate emptyReply];
+         else if (error != nil && error.code == NSURLErrorTimedOut)
+             NSLog(@"timeout");
+         //[delegate timedOut];
+         else if (error != nil)
+             NSLog(@"error");
+         //[delegate downloadError:error];
+     }];
+    return YES;
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -73,9 +71,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
-@end
-@end
 
 @end
 
