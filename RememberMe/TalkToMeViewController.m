@@ -17,7 +17,7 @@
     
     self.fliteController = [[OEFliteController alloc] init]; //...
     self.slt = [[Slt alloc] init]; //...
-    [self.fliteController say:@ "A short statement" withVoice:self.slt];
+    [self.fliteController say:@ "Hello, Talk to me." withVoice:self.slt];
     self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
     [self.openEarsEventsObserver setDelegate:self];
 }
