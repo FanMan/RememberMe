@@ -7,13 +7,19 @@
 //
 
 #import "TalkToMeViewController.h"
-#import <Slt/Slt.h>
+#import <Slt/slt.h>
 #import <OpenEars/OEFliteController.h>
+#import <OpenEars/OELanguageModelGenerator.h>
+#import <OpenEars/OEAcousticModel.h>
+#import <OpenEars/OEEventsObserver.h>
 
 @interface TalkToMeViewController ()
 @property (strong, nonatomic) OEFliteController *fliteController; //...
 @property (strong, nonatomic) Slt *slt; //...
 @property NSMutableArray *objects;
+@interface ViewController : UIViewController <OEEventsObserverDelegate>
+@property (strong, nonatomic) OEEventsObserver *openEarsEventsObserver;
+
 @end
 
 @implementation TalkToMeViewController
@@ -25,6 +31,9 @@
     
     self.fliteController = [[OEFliteController alloc] init]; //...
     self.slt = [[Slt alloc] init]; //...
+    [self.fliteController say:@ "A short statement" withVoice:self.slt];
+    self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
+    [self.openEarsEventsObserver setDelegate:self];
 }
 
 

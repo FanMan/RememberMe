@@ -19,6 +19,7 @@
 		745E8EBB1ADDE050007FA7BF /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745E8EB91ADDE050007FA7BF /* Slt.framework */; };
 		745E8EBF1ADDE367007FA7BF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745E8EBE1ADDE367007FA7BF /* AudioToolbox.framework */; };
 		745E8EC11ADDE36D007FA7BF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 745E8EC01ADDE36D007FA7BF /* AVFoundation.framework */; };
+		9F48B0511AE03BD600EE7498 /* TalkToMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F48B0501AE03BD600EE7498 /* TalkToMeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		745E8EB91ADDE050007FA7BF /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Slt.framework; path = RememberMe/Framework/Slt.framework; sourceTree = SOURCE_ROOT; };
 		745E8EBE1ADDE367007FA7BF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		745E8EC01ADDE36D007FA7BF /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9F48B04F1AE03BD600EE7498 /* TalkToMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkToMeViewController.h; sourceTree = "<group>"; };
+		9F48B0501AE03BD600EE7498 /* TalkToMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkToMeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,8 @@
 		745E8E851ADDDDFD007FA7BF /* RememberMe */ = {
 			isa = PBXGroup;
 			children = (
+				9F48B04F1AE03BD600EE7498 /* TalkToMeViewController.h */,
+				9F48B0501AE03BD600EE7498 /* TalkToMeViewController.m */,
 				745E8EB31ADDDF94007FA7BF /* Framework */,
 				745E8E8A1ADDDDFD007FA7BF /* AppDelegate.h */,
 				745E8E8B1ADDDDFD007FA7BF /* AppDelegate.m */,
@@ -253,6 +258,7 @@
 				745E8E8F1ADDDDFD007FA7BF /* MasterViewController.m in Sources */,
 				745E8E891ADDDDFD007FA7BF /* main.m in Sources */,
 				745E8E921ADDDDFD007FA7BF /* DetailViewController.m in Sources */,
+				9F48B0511AE03BD600EE7498 /* TalkToMeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
