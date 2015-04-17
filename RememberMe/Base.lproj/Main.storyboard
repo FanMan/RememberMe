@@ -110,20 +110,40 @@
                                     <segue destination="f5J-rs-btj" kind="show" id="XDZ-fB-stG"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="daJ-Te-aI4">
+                                <rect key="frame" x="16" y="119" width="382" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="typeToMeTextBox:" destination="73q-Nx-IxG" eventType="editingDidEndOnExit" id="8BT-Hv-Vq3"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDq-5a-ANa">
+                                <rect key="frame" x="16" y="192" width="382" height="114"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.29803921570000003" green="0.69411764710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="typeToMeResponse" destination="FDq-5a-ANa" id="SOx-fE-LKm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNw-lF-Ug0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="225" y="435"/>
+            <point key="canvasLocation" x="224" y="422"/>
         </scene>
     </scenes>
     <resources>
         <image name="TALK TO ME.png" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cgP-uY-aa5"/>
+        <segue reference="XDZ-fB-stG"/>
     </inferredMetricsTieBreakers>
 </document>

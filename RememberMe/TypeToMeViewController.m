@@ -8,7 +8,13 @@
 
 #import "TypeToMeViewController.h"
 
+@interface TypeToMeViewController ()
+
+@end
+
 @implementation TypeToMeViewController
+@synthesize typeToMeBox;
+@synthesize typeToMeResponse;
 
 
 -(void)viewDidLoad {
@@ -20,11 +26,14 @@
     [self.fliteController say:@ "Hello, type to me." withVoice:self.slt];
     self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
     [self.openEarsEventsObserver setDelegate:self];
+    
 }
 
--(void)temporaryFunction //change the name and bind this to a button on Type To Me view controller
-{
-    NSString *message = @"I feel alone";
+- (IBAction)typeToMeTextBox:(id)sender {
+    
+    typeToMeResponse.text = [typeToMeResponse.text stringByAppendingString:@"hiiiiiiii"];
+    /*
+    NSString *message = typeToMeBox.text;
     
     NSString *parsedInputString = [message stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
@@ -42,6 +51,7 @@
          if ([data length] > 0 && error == nil) {
              NSLog(@"success");
              NSString *reply = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+             //typeToMeResponse.text = reply;
              NSLog(@"reply: %@", reply);
              //[delegate receivedData:data];
          } /*else if ([data length] == 0 && error == nil)
@@ -52,12 +62,31 @@
             //[delegate timedOut];
             else if (error != nil)
             NSLog(@"error");
-            //[delegate downloadError:error];*/
+            //[delegate downloadError:error];
          else
          {
+             //typeToMeResponse.text = @"Sorry, I did not understand that.";
              NSLog(@"Sorry, I did not understand that.");
          }
-     }];
+     }];*/
+    
 }
 
+- (void)didReceiveMemoryWarning {
+    
+    // Releases the view if it doesn't have a superview.
+    
+    [super didReceiveMemoryWarning];
+    
+    // Release any cached data, images, etc that aren't in use.
+    
+}
+
+- (void)viewDidUnload {
+    
+    // Release any retained subviews of the main view.
+    
+    // e.g. self.myOutlet = nil;
+    
+}
 @end
