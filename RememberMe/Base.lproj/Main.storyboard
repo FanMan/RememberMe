@@ -115,24 +115,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="typeToMeTextBox:" destination="73q-Nx-IxG" eventType="editingDidEndOnExit" id="8BT-Hv-Vq3"/>
+                                    <action selector="typeToMeReturn:" destination="73q-Nx-IxG" eventType="editingDidEndOnExit" id="mk6-3a-XrB"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDq-5a-ANa">
-                                <rect key="frame" x="16" y="192" width="382" height="114"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u2U-UX-e6s">
+                                <rect key="frame" x="16" y="180" width="382" height="102"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAt-aw-85m">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="102"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" none="YES" staticText="YES" notEnabled="YES"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.29803921570000003" green="0.69411764710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
-                        <outlet property="typeToMeResponse" destination="FDq-5a-ANa" id="SOx-fE-LKm"/>
+                        <outlet property="typeToMeBox" destination="daJ-Te-aI4" id="guj-QQ-JEU"/>
+                        <outlet property="typeToMeResponse" destination="rAt-aw-85m" id="8v3-q0-NtE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNw-lF-Ug0" userLabel="First Responder" sceneMemberID="firstResponder"/>
