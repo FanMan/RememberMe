@@ -15,9 +15,12 @@
 
 @interface TypeToMeViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *typeToMeBox;
+@property (weak, nonatomic) IBOutlet UITextView *typeToMeResponse;
 @property (strong, nonatomic) OEFliteController *fliteController; //...
 @property (strong, nonatomic) Slt *slt; //...
 @property (strong, nonatomic) OEEventsObserver *openEarsEventsObserver;
 @property NSMutableArray *objects;
+
 
 @end
