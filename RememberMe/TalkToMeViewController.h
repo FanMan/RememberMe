@@ -14,7 +14,7 @@
 #import <OpenEars/OEEventsObserver.h>
 
 @interface TalkToMeViewController : UIViewController
-
+- (IBAction)onMicrophonePress:(id)sender;
 @property (strong, nonatomic) OEFliteController *fliteController; //...
 @property (strong, nonatomic) Slt *slt; //...
 @property (strong, nonatomic) OEEventsObserver *openEarsEventsObserver;

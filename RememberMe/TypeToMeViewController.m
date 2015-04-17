@@ -53,8 +53,8 @@
              NSString *finalResponse = [resultDictionary objectForKey:@"responses"];
              
              
-             typeToMeResponse.text = finalResponse;
-             NSLog(@"reply: %@", finalResponse);
+             typeToMeResponse.text = reply;
+             //NSLog(@"reply: %@", modifiedString);
              NSLog(@"reply: %@", reply);
              //[delegate receivedData:data];
          } /*else if ([data length] == 0 && error == nil)
