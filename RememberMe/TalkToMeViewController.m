@@ -28,7 +28,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
     
-    NSArray *words = [NSArray arrayWithObjects: @"Hello what is your name", @"Hello, Michael.", @"Do you have kids?", @"What are the names of your kids?" @"How old are Bill and Jeff?", @"What does Bill do for a living?", nil];
+    NSArray *words = [NSArray arrayWithObjects: @"Hello what is your name", @"Do you have kids?", @"What are the names of your kids?" @"How old are Bill and Jeff?", @"What does Bill do for a living?", nil];
     NSString *name = @"NameIWantForMyLanguageModelFiles";
     NSError *err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
     
