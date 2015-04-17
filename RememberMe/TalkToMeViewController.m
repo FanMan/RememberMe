@@ -18,16 +18,34 @@
 #import <OpenEars/OEAcousticModel.h>
 #import <OpenEars/OEEventsObserver.h>
 
-@implementation TalkToMeViewController
-@end
 @interface ViewController : UIViewController <OEEventsObserverDelegate>
 @property (strong, nonatomic) OEEventsObserver *openEarsEventsObserver;
+@end
+
+@implementation TalkToMeViewController
 
 
--(void)viewDidLoad; {
+-(void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
+    
+    NSArray *words = [NSArray arrayWithObjects:@"WORD", @"STATEMENT", @"OTHER WORD", @"A PHRASE", nil];
+    NSString *name = @"NameIWantForMyLanguageModelFiles";
+    NSError *err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]]; // Change "AcousticModelEnglish" to "AcousticModelSpanish" to create a Spanish language model instead of an English one.
+    
+    NSString *lmPath = nil;
+    NSString *dicPath = nil;
+    
+    if(err == nil) {
+        
+        lmPath = [lmGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:@"NameIWantForMyLanguageModelFiles"];
+        dicPath = [lmGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:@"NameIWantForMyLanguageModelFiles"];
+        
+    } else {
+        NSLog(@"Error: %@",[err localizedDescription]);
+        
     self.fliteController = [[OEFliteController alloc] init]; //...
     self.slt = [[Slt alloc] init]; //...
     [self.fliteController say:@ "Hello, talk to me." withVoice:self.slt];
@@ -37,17 +55,17 @@
     [self.openEarsEventsObserver setDelegate:self];
 }
 
-//add these delegate mehtods of OEEventsObserver to your class, which is where you will receive information about received speech hypothesis and other speech UI events:
+//add these delegate methods of OEEventsObserver to your class, which is where you will receive information about received speech hypothesis and other speech UI events:
 
-- (void)pocketsphnixDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID{
+- (void)pocketsphnixDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID;{
     NSLog(@"The received hypothesis is %@ with a score of %a and an ID of %a", hypothesis, recognitionScore, utteranceID);
 }
 
-- (void)pocketsphinxidStartListening{
+- (void)pocketsphinxidStartListening {
     NSLog(@ "Pocketsphinx is now listening.");
 }
 
-- (void)pocketsphinxDidDetectSpeech{
+- (void)pocketsphinxDidDetectSpeech {
     NSLog(@"Pocketsphinx has detected speech.");
 }
 
@@ -76,24 +94,6 @@
 
 //create your language model. Enter your words and phrases in all capital letters, since the model is generated against a dictionary in which the entries are capitalized
 
-OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
-
-NSArray *words = [NSArray arrayWithObjects:@"WORD", @"STATEMENT", @"OTHER WORD", @"A PHRASE", nil];
-NSString *name = @"NameIWantForMyLanguageModelFiles";
-NSError *err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]]; // Change "AcousticModelEnglish" to "AcousticModelSpanish" to create a Spanish language model instead of an English one.
-
-NSString *lmPath = nil;
-NSString *dicPath = nil;
-
-if(err == nil) {
-    
-    lmPath = [lmGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:@"NameIWantForMyLanguageModelFiles"];
-    dicPath = [lmGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:@"NameIWantForMyLanguageModelFiles"];
-    
-} else {
-    NSLog(@"Error: %@",[err localizedDescription]);
-}
-
 
 //method where you want to recognize speech
 
@@ -101,6 +101,7 @@ if(err == nil) {
 [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO]; // Change "AcousticModelEnglish" to "AcousticModelSpanish" to perform Spanish recognition instead of English
 
 //OEEventsObserver to your class, which is where you will receive information about received speech hypotheses and other speech UI events:
+    
 - (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
     NSLog(@"The received hypothesis is %@ with a score of %@ and an ID of %@", hypothesis, recognitionScore, utteranceID);
 }
