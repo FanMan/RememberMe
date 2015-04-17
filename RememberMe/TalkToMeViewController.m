@@ -29,7 +29,7 @@
     [self.fliteController say:@ "Hello, type to me." withVoice:self.slt];
     OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
     
-    NSArray *words = [NSArray arrayWithObjects: @"Hello what is your name?", @"Do you have kids?", @"What are the names of your kids?" @"How old are Bill and Jeff?", @"What does Bill do for a living?", nil];
+    NSArray *words = [NSArray arrayWithObjects: @"What is your name?", @"How old are you?", @"Tell me about yourself." @"What are the names of your kids?", @"What do they do for a living", @"What does Michael do for a living?", @"How old are they?", nil];
     NSString *name = @"NameIWantForMyLanguageModelFiles";
     NSError *err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
     
