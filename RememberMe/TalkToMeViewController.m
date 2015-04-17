@@ -45,7 +45,12 @@
         
     } else {
         NSLog(@"Error: %@",[err localizedDescription]);
-        
+    }
+    //method where you want to recognize speech
+    
+    [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
+    [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO]; // Change "AcousticModelEnglish" to "AcousticModelSpanish" to perform Spanish recognition instead of English
+    
     self.fliteController = [[OEFliteController alloc] init]; //...
     self.slt = [[Slt alloc] init]; //...
     [self.fliteController say:@ "Hello, talk to me." withVoice:self.slt];
@@ -104,11 +109,6 @@
 //create your language model. Enter your words and phrases in all capital letters, since the model is generated against a dictionary in which the entries are capitalized
 
 
-//method where you want to recognize speech
-
-[[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
-[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO]; // Change "AcousticModelEnglish" to "AcousticModelSpanish" to perform Spanish recognition instead of English
-
-
 @end
+
 
