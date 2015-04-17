@@ -47,16 +47,17 @@
         NSLog(@"Error: %@",[err localizedDescription]);
     }
     //method where you want to recognize speech
+
+    self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
+    [self.openEarsEventsObserver setDelegate:self];
     
     [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
     [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO]; // Change "AcousticModelEnglish" to "AcousticModelSpanish" to perform Spanish recognition instead of English
     
-    self.fliteController = [[OEFliteController alloc] init]; //...
-    self.slt = [[Slt alloc] init]; //...
-    [self.fliteController say:@ "Hello, talk to me." withVoice:self.slt];
-    self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
-    [self.openEarsEventsObserver setDelegate:self];
-    [self.fliteController say:@ "A short statement" withVoice:self.slt];
+//    self.fliteController = [[OEFliteController alloc] init]; //...
+//    self.slt = [[Slt alloc] init]; //...
+//    [self.fliteController say:@ "Hello, talk to me." withVoice:self.slt];
+//    [self.fliteController say:@ "A short statement" withVoice:self.slt];
 }
 
 
