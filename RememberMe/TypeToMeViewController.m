@@ -50,12 +50,13 @@
              NSString *reply = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
              
              NSDictionary *resultDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            
              NSString *finalResponse = [resultDictionary objectForKey:@"responses"];
+
+             [self.fliteController say:finalResponse withVoice:self.slt];
              
-             
-             typeToMeResponse.text = reply;
-             //NSLog(@"reply: %@", modifiedString);
-             NSLog(@"reply: %@", reply);
+             //typeToMeResponse.text = reply;
+             NSLog(@"reply: %@", finalResponse);
              //[delegate receivedData:data];
          } /*else if ([data length] == 0 && error == nil)
             NSLog(@"empty");

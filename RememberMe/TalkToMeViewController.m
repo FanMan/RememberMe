@@ -26,6 +26,7 @@
 
 - (IBAction)onMicrophonePress:(id)sender {
     // Do any additional setup after loading the view, typically from a nib.
+    [self.fliteController say:@ "Hello, type to me." withVoice:self.slt];
     OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
     
     NSArray *words = [NSArray arrayWithObjects: @"Hello what is your name?", @"Do you have kids?", @"What are the names of your kids?" @"How old are Bill and Jeff?", @"What does Bill do for a living?", nil];
