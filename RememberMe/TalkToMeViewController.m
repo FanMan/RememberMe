@@ -60,36 +60,6 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
-    
-    NSArray *words = [NSArray arrayWithObjects: @"What chores did you have to do when you were growing up?", @"When you were a teenager, what did you and your friends do for fun?", @"What are some of the most valuable things you learned from your parents?", @"What did your grandparents and great grandparents do for a living?", @"When you were growing up, what did you dream you would do with your life?" @"What accomplishments in your life are you most proud of?" @"How would you like to be remembered?", nil];
-    NSString *name = @"NameIWantForMyLanguageModelFiles";
-    NSError *err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
-    
-    NSString *lmPath = nil;
-    NSString *dicPath = nil;
-    
-    if(err == nil) {
-        
-        lmPath = [lmGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:@"NameIWantForMyLanguageModelFiles"];
-        dicPath = [lmGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:@"NameIWantForMyLanguageModelFiles"];
-        
-    } else {
-        NSLog(@"Error: %@",[err localizedDescription]);
-    }
-    //method where you want to recognize speech
-    
-    self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
-    [self.openEarsEventsObserver setDelegate:self];
-    
-    [[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
-    [[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO]; // Change "AcousticModelEnglish" to "AcousticModelSpanish" to perform Spanish recognition instead of English
-    
-    //    self.fliteController = [[OEFliteController alloc] init]; //...
-    //    self.slt = [[Slt alloc] init]; //...
-    //    [self.fliteController say:@ "Hello, talk to me." withVoice:self.slt];
-    //    [self.fliteController say:@ "A short statement" withVoice:self.slt];
 
 }
 
@@ -123,6 +93,7 @@
          }
          else
          {
+             [self.fliteController say:@"Sorry, I did not understand that." withVoice:self.slt];
              NSLog(@"Sorry, I did not understand that.");
          }
      }];
