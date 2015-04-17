@@ -56,6 +56,7 @@
     [self.fliteController say:@ "Hello, talk to me." withVoice:self.slt];
     self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
     [self.openEarsEventsObserver setDelegate:self];
+    [self.fliteController say:@ "A short statement" withVoice:self.slt];
 }
 
 
