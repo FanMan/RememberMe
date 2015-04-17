@@ -26,7 +26,6 @@
 
 - (IBAction)onMicrophonePress:(id)sender {
     // Do any additional setup after loading the view, typically from a nib.
-    [self.fliteController say:@ "Hello, type to me." withVoice:self.slt];
     OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
     
     NSArray *words = [NSArray arrayWithObjects: @"What is your name?", @"How old are you?", @"Tell me about yourself." @"What are the names of your kids?", @"What do they do for a living", @"What does Michael do for a living?", @"How old are they?", nil];
@@ -61,6 +60,9 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+    self.fliteController = [[OEFliteController alloc] init]; //...
+    self.slt = [[Slt alloc] init]; //...
+    [self.fliteController say:@ "Hello, talk to me." withVoice:self.slt];
 
 }
 
@@ -82,15 +84,14 @@
     [NSURLConnection sendAsynchronousRequest:postRequest queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
      {
          if ([data length] > 0 && error == nil) {
-             NSLog(@"success");
-             NSString *reply = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+             //NSLog(@"success");
              
              NSDictionary *resultDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-             NSString *finalResponse = [resultDictionary objectForKey:@"responses"];
+             NSArray* arr = [resultDictionary objectForKey:@"responses"];
+             NSString *reply = [arr objectAtIndex:0];
+             NSLog(@"reply: %@", reply);
              
-             [self.fliteController say:finalResponse withVoice:self.slt];
-             
-             NSLog(@"reply: %@", finalResponse);
+             [self.fliteController say:reply withVoice:self.slt];
          }
          else
          {

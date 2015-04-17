@@ -46,17 +46,18 @@
     [NSURLConnection sendAsynchronousRequest:postRequest queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error)
      {
          if ([data length] > 0 && error == nil) {
-             NSLog(@"success");
-             NSString *reply = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+             //NSLog(@"success");
              
              NSDictionary *resultDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-            
-             NSString *finalResponse = [resultDictionary objectForKey:@"responses"];
-
-             [self.fliteController say:finalResponse withVoice:self.slt];
+             NSArray* arr = [resultDictionary objectForKey:@"responses"];
+             NSString *reply = [arr objectAtIndex:0];
+             NSLog(@"reply: %@", reply);
              
-             //typeToMeResponse.text = reply;
-             NSLog(@"reply: %@", finalResponse);
+             [self.fliteController say:reply withVoice:self.slt];
+             
+             typeToMeResponse.text = reply;
+             
+             //NSLog(@"reply: %@", finalResponse);
              //[delegate receivedData:data];
          } /*else if ([data length] == 0 && error == nil)
             NSLog(@"empty");
@@ -69,7 +70,7 @@
             //[delegate downloadError:error];*/
             else
             {
-            typeToMeResponse.text = @"Sorry, I did not understand that.";
+            //typeToMeResponse.text = @"Sorry, I did not understand that.";
             NSLog(@"Sorry, I did not understand that.");
             }
     }];
