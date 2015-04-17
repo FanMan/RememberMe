@@ -28,7 +28,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
     
-    NSArray *words = [NSArray arrayWithObjects: @"My name is Angela.", @"I have two children." @"Their names are Michael and Rafael.", @"I liked traveling to Europe.", nil];
+    NSArray *words = [NSArray arrayWithObjects: @"MY", @"NAME", @"IS", @"ANGELA", @"I HAVE TWO CHILDREN", @"THEIR NAMES ARE MICHAEL AND RAFAEL", @"I LIKED TRAVELING TO EUROPE", nil];
     NSString *name = @"NameIWantForMyLanguageModelFiles";
     NSError *err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
     
@@ -71,7 +71,7 @@
     NSLog(@"The received hypothesis is %@ with a score of %@ and an ID of %@", hypothesis, recognitionScore, utteranceID);
     
     NSString *parsedInputString = [hypothesis stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
-    
+    NSLog(@"Heard %@", parsedInputString);
     NSString *url = [NSString stringWithFormat:@"https://aiaas.pandorabots.com/talk/1409611776855/rememtest?input=" @"%@" @"&user_key=b9332f7819d3df78debaafce36fafeee", parsedInputString];
     // Override point for customization after application launch.
     // Create the request.
