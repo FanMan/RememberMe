@@ -57,40 +57,49 @@
 
 //add these delegate methods of OEEventsObserver to your class, which is where you will receive information about received speech hypothesis and other speech UI events:
 
-- (void)pocketsphnixDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID{
-    NSLog(@"The received hypothesis is %@ with a score of %a and an ID of %a", hypothesis, recognitionScore, utteranceID)
-}
-
-- (void)pocketsphinxidStartListening {
-    NSLog(@ "Pocketsphinx is now listening.");
-}
-
-- (void)pocketsphinxDidDetectSpeech {
-    NSLog(@"Pocketsphinx has detected speech.");
-}
-
-- (void)pocketsphinxDidDetectFinishedSpeech{
-    NSLog(@"PocketSphinx has detected a period of silence, concluding an utterance.");
-}
-- (void)pocketSphinxdidStopListening {
-    NSLog(@"Pocketsphinx has stopped listening.");
-}
-- (void)pocketsphinxDidSuspendRecognition {
-    NSLog(@"Pocketsphinx has suspended recognition.");
-}
-- (void)pocketspinxDidResumeRecognition {
-    NSLog(@"Pockesphinx has resumed recognition.");
-}
-- (void)pocketsphinxDidChangeLanguageModelToFile: (NSString *)newLanguageModelPathAsString andDictionary:
-(NSString *)newDictionaryPathAsString{
-    NSLog(@"PocketSphinx is now using the following language model: \n%a, and the following dictionary: %@", newLanguageModelPathAsString,newDictionaryPathAsString);
-}
--(void)pocketSphinxContinuousTeardownDidFailWithReason:(NSString *)reasonForFailure {
-    NSLog(@"Listening teardown wasn't successful and returned the failure reason: %@, resaonForFailure");
-}
--(void)testRecognitionCompleted {
-    NSLog(@"A test file that was submitted for recognition is now complete.");
-}
+    - (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
+        NSLog(@"The received hypothesis is %@ with a score of %@ and an ID of %@", hypothesis, recognitionScore, utteranceID);
+    }
+    
+    - (void) pocketsphinxDidStartListening {
+        NSLog(@"Pocketsphinx is now listening.");
+    }
+    
+    - (void) pocketsphinxDidDetectSpeech {
+        NSLog(@"Pocketsphinx has detected speech.");
+    }
+    
+    - (void) pocketsphinxDidDetectFinishedSpeech {
+        NSLog(@"Pocketsphinx has detected a period of silence, concluding an utterance.");
+    }
+    
+    - (void) pocketsphinxDidStopListening {
+        NSLog(@"Pocketsphinx has stopped listening.");
+    }
+    
+    - (void) pocketsphinxDidSuspendRecognition {
+        NSLog(@"Pocketsphinx has suspended recognition.");
+    }
+    
+    - (void) pocketsphinxDidResumeRecognition {
+        NSLog(@"Pocketsphinx has resumed recognition.");
+    }
+    
+    - (void) pocketsphinxDidChangeLanguageModelToFile:(NSString *)newLanguageModelPathAsString andDictionary:(NSString *)newDictionaryPathAsString {
+        NSLog(@"Pocketsphinx is now using the following language model: \n%@ and the following dictionary: %@",newLanguageModelPathAsString,newDictionaryPathAsString);
+    }
+    
+    - (void) pocketSphinxContinuousSetupDidFailWithReason:(NSString *)reasonForFailure {
+        NSLog(@"Listening setup wasn't successful and returned the failure reason: %@", reasonForFailure);
+    }
+    
+    - (void) pocketSphinxContinuousTeardownDidFailWithReason:(NSString *)reasonForFailure {
+        NSLog(@"Listening teardown wasn't successful and returned the failure reason: %@", reasonForFailure);
+    }
+    
+    - (void) testRecognitionCompleted {
+        NSLog(@"A test file that was submitted for recognition is now complete.");
+    }
 
 //create your language model. Enter your words and phrases in all capital letters, since the model is generated against a dictionary in which the entries are capitalized
 
