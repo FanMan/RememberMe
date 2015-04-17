@@ -72,7 +72,7 @@
     
     NSString *parsedInputString = [hypothesis stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
-    NSString *url = [NSString stringWithFormat:@"https://aiaas.pandorabots.com/talk/1409611776855/rememtest?input=" @"%@" @"&user_key=b9332f7819d3df78debaafce36fafeee", parsedInputString];
+    NSString *url = [NSString stringWithFormat:@"https://aiaas.pandorabots.com/talk/1409611776855/rememberme?input=" @"%@" @"&user_key=b9332f7819d3df78debaafce36fafeee", parsedInputString];
     // Override point for customization after application launch.
     // Create the request.
     NSMutableURLRequest *postRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
