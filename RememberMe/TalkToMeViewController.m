@@ -12,6 +12,8 @@
 //NAMED "TypeToMeViewController.m"
 
 #import "TalkToMeViewController.h"
+#import <OpenEars/OEPocketsphinxController.h>
+#import <OpenEars/OEAcousticModel.h>
 
 @implementation TalkToMeViewController
 
@@ -63,6 +65,10 @@
 -(void)testRecognitionCompleted {
     NSLog(@"A test file that was submitted for recognition is now complete.");
 }
+
+//create your language model
+
+
 
 @end
 
