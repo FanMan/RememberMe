@@ -28,7 +28,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
     
-    NSArray *words = [NSArray arrayWithObjects: @"MY", @"NAME", @"IS", @"ANGELA", @"I HAVE TWO CHILDREN", @"THEIR NAMES ARE MICHAEL AND RAFAEL", @"I LIKED TRAVELING TO EUROPE", nil];
+    NSArray *words = [NSArray arrayWithObjects: @"FATHER", @"MOTHER", @"DAD", @"MOM", @"BROTHER", @"SISTER", @"BRO", @"SIS"];
+    //NSArray *words = [NSArray arrayWithObjects: @"MY", @"NAME", @"IS", @"ANGELA", @"I HAVE TWO CHILDREN", @"THEIR NAMES ARE MICHAEL AND RAFAEL", @"I LIKED TRAVELING TO EUROPE", nil];
     NSString *name = @"NameIWantForMyLanguageModelFiles";
     NSError *err = [lmGenerator generateLanguageModelFromArray:words withFilesNamed:name forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
     
@@ -69,7 +70,7 @@
 
 - (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
     NSLog(@"The received hypothesis is %@ with a score of %@ and an ID of %@", hypothesis, recognitionScore, utteranceID);
-    
+    /*
     NSString *parsedInputString = [hypothesis stringByReplacingOccurrencesOfString:@" " withString:@"%20"];
     
     NSString *url = [NSString stringWithFormat:@"https://aiaas.pandorabots.com/talk/1409611776855/rememberme?input=" @"%@" @"&user_key=b9332f7819d3df78debaafce36fafeee", parsedInputString];
@@ -100,7 +101,18 @@
          }
          
      }];
-
+    */
+    
+    ///////////////////////////////////////////////////////
+	// Simple test to see if Sophia can recognize speech //
+	///////////////////////////////////////////////////////
+	if([words containsObject:hypothesis]) {
+		[self.fliteController say:@"Please expand" withVoice:self.slt];
+	}
+	else {
+		self.fliteController say:@"Sorry, I did not understand that." withVoice:self.slt];
+        NSLog(@"Sorry, I did not understand that.");
+	}
 }
 
 - (void) pocketsphinxDidStartListening {
