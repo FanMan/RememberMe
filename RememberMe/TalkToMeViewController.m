@@ -104,15 +104,15 @@
     */
     
     ///////////////////////////////////////////////////////
-	// Simple test to see if Sophia can recognize speech //
-	///////////////////////////////////////////////////////
-	if([words containsObject:hypothesis]) {
-		[self.fliteController say:@"Please expand" withVoice:self.slt];
-	}
-	else {
-		self.fliteController say:@"Sorry, I did not understand that." withVoice:self.slt];
-        NSLog(@"Sorry, I did not understand that.");
-	}
+    // Simple test to see if Sophia can recognize speech //
+    ///////////////////////////////////////////////////////
+    if([words containsObject:hypothesis]) {
+	[self.fliteController say:@"Please expand" withVoice:self.slt];
+     }
+     else {
+	self.fliteController say:@"Sorry, I did not understand that." withVoice:self.slt];
+     NSLog(@"Sorry, I did not understand that.");
+     }
 }
 
 - (void) pocketsphinxDidStartListening {
